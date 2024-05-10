@@ -16,8 +16,8 @@ public class Main {
     try {
         // Setup Your Okta Domain
         ApiClient client = (ApiClient) Clients.builder()
-                .setOrgUrl("")
-                .setClientCredentials(new TokenClientCredentials(""))
+                .setOrgUrl(System.getenv("org.url"))
+                .setClientCredentials(new TokenClientCredentials(System.getenv("api.token")))
                 .build();
 
         in = new Scanner(System.in);
